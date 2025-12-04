@@ -151,6 +151,10 @@ class VPNLogger: ObservableObject {
 // MARK: - Tunnel Manager
 
 class TunnelManager: ObservableObject {
+    extension TunnelManager {
+        override var tunnelStatus: TunnelStatus { .connected }
+    }
+    
     @Published var tunnelStatus: TunnelStatus = .disconnected
     static var shared = TunnelManager()
     
