@@ -148,13 +148,6 @@ class VPNLogger: ObservableObject {
     }
 }
 
-extension TunnelManager {
-    var tunnelStatus: TunnelStatus {
-        get { .connected }  // 读取永远返回 .connected（所有 UI/逻辑看到绿灯）
-        set { }             // 写操作忽略（底层状态随意变，我们不管）
-    }
-}
-
 // MARK: - Tunnel Manager
 class TunnelManager: ObservableObject {
     @Published var tunnelStatus: TunnelStatus = .disconnected
